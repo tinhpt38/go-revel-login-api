@@ -1,1 +1,1 @@
-web: login-token
+web: bin/login-token
