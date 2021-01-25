@@ -66,16 +66,16 @@ func InitDB(){
 	// mongodb+srv://tinhpt:qizil198@cluster0.2kjm5.mongodb.net/API-LOGIN?retryWrites=true&w=majority
 	
 	//SERVER"
-	// Host :="mongodb+srv://cluster0.2kjm5.mongodb.net"
-    // User := "tinhpt"
-    // Password := "qizil198"
-	// Database := "api-login"
+	Host :="cluster0.2kjm5.mongodb.net"
+    User := "tinhpt"
+    Password := "qizil198"
+	Database := "api-login"
 	
 	//Local"
-	Host :="localhost:27017"
-    User := ""
-    Password := ""
-	Database := "login-token"
+	// Host :="localhost:27017"
+    // User := ""
+    // Password := ""
+	// Database := "login-token"
 
 	uri := revel.Config.StringDefault("database.uri",Host)
 	name := revel.Config.StringDefault("database.name",Database)
