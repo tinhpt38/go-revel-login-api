@@ -1,6 +1,7 @@
 package database
 
 import (
+	"time"
 	"gopkg.in/mgo.v2"
 )
 
@@ -10,8 +11,14 @@ var Session *mgo.Session
 
 //Init databse
 
-func  InitDB(uri, dbname string) error{
-	session, err := mgo.Dial(uri)
+func  InitDB(uri, dbname, user, password string) error{
+	// session, err := mgo.Dial(uri)
+	session, err := mgo.DialWithInfo(&mgo.DialInfo{
+        Addrs:    []string{uri},
+        Username: user,
+        Password: password,
+        Timeout:  100 * time.Second,
+    })
 	if(err != nil){
 		return err 
 	}
